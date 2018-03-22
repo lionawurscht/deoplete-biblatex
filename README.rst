@@ -14,6 +14,16 @@ citations of this pattern:
    [author:AGreatCitation...
    
    [author,authornumb:AnotherCitation...
+   
+Required
+========
+
+- `Neovim`_
+- `Deoplete`_
+- `Bibtexparser`_ for python
+
+.. _deoplete: https://github.com/Shougo/deoplete.nvim
+.. _bibtexparser: https://github.com/sciunto-org/python-bibtexparser
 
 Installation
 ============
