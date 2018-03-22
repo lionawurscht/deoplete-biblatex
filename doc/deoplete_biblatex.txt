@@ -1,0 +1,78 @@
+*deoplete_biblatex* Deoplete source for biblatex
+
+Author: Lion Waaser <extra.lion.w@gmail.com>
+
+===============================================================================
+CONTENTS                                           *deoplete-biblatex-contents*
+
+  1. Introduction                             |deoplete-biblatex-introduction|
+  2. Configuration                            |deoplete-biblatex-configuration|
+  3. License                                  |deoplete-biblatex-license|
+  4. Bugs                                     |deoplete-biblatex-bugs
+  5. Contributing                             |deoplete-biblatex-contributing|
+
+===============================================================================
+INTRODUCTION                                   *deoplete-biblatex-introduction*
+
+This deoplete[1] source offers completion of biblatex ids. By default it looks
+for citions of this pattern:
+
+  [AGreatCitation....
+
+  [AGreatCitation,AnotherCitation....
+
+  [author:AGreatCitation...
+
+  [author,authornumb:AnotherCitation...
+
+===============================================================================
+CONFIGURATION                                 *deoplete-biblatex-configuration*
+
+Change the *.bib file used:
+>
+  let g:deoplete#sources#biblatex#bibfile = '~/another_file.bib'
+<
+Default: '~/.bibliography.bib'
+
+Set a custom start pattern in python regex syntax:
+>
+  let g:deoplete#sources#biblatex#startpattern = '\['
+<
+Default: '\[(?:[\w,]+:)?'
+
+Set a delimiter between citations in python regex syntax:
+>
+  let g:deoplete#sources#biblatex#delimiter = ';'
+<
+Default: ','
+
+You can use the |deoplete#custom#set()| function to change the |filetypes| for
+this source.
+>
+  call deoplete#custom#set('biblatex', 'filetypes', ['html'])
+<
+Default: ['rst']
+
+===============================================================================
+LICENSE                                             *deoplete-biblatex-license*
+
+GNU GENERAL PUBLIC LICENSE
+
+===============================================================================
+BUGS                                                   *deoplete-biblatex-bugs*
+
+If you find any bugs please let my know by creating an issue on GitHub.
+
+https://github.com/lionawurscht/deoplete-biblatex/issues
+
+===============================================================================
+CONTRIBUTING                                   *deoplete-biblatex-contributing*
+
+If you wish to contribute to this plugin please fork it on GitHub and create a
+pull request.
+
+https://github.com/lionawurscht/deoplete-biblatex
+
+===============================================================================
+
+[1] https://github.com/Shougo/deoplete.nvim
