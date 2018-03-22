@@ -18,18 +18,22 @@ citations of this pattern:
 Installation
 ============
 
-To install `deoplete-biblatex`, use your favorite `Neovim<https://neovim.io_>`_
+To install `deoplete-biblatex`, use your favorite `Neovim`_
 plugin manager.
 
-`vim-plug<https://github.com/junegunn/vim-plug_>_`_
----------------------------------------------------
+.. _Neovim: https://neovim.io
+
+`vim-plug`_
+--------------------------------------------------
 
 :: 
 
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
    Plug 'lionawurscht/deoplete-biblatex'
+   
+.. _vim-plug: https://github.com/junegunn/vim-plug
 
 Documentation
 =============
 
-For information on the configuration see `:help deoplete-biblatex.txt`
+For information on the configuration see ``:help deoplete-biblatex.txt``
