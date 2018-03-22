@@ -25,8 +25,6 @@ class Source(Base):
     def __init__(self, vim):
         super().__init__(vim)
 
-        self.__pattern = re.compile(r'\[(?:[\w,]*:)?(?:\w+,)*\w+$')
-
         self.filetypes = ['rst', 'markdown']
         self.mark = '[bib]'
         self.name = 'biblatex'
