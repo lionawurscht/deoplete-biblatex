@@ -8,7 +8,7 @@ CONTENTS                                           *deoplete-biblatex-contents*
   1. Introduction                             |deoplete-biblatex-introduction|
   2. Configuration                            |deoplete-biblatex-configuration|
   3. License                                  |deoplete-biblatex-license|
-  4. Bugs                                     |deoplete-biblatex-bugs
+  4. Bugs                                     |deoplete-biblatex-bugs|
   5. Contributing                             |deoplete-biblatex-contributing|
 
 ===============================================================================
