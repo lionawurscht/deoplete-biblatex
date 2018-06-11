@@ -49,7 +49,7 @@ Default: ','
 You can use the |deoplete#custom#set()| function to change the |filetypes| for
 this source.
 >
-  call deoplete#custom#set('biblatex', 'filetypes', ['html'])
+  call deoplete#custom#source('biblatex', 'filetypes', ['html'])
 <
 Default: ['rst']
 

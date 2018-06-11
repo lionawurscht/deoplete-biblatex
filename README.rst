@@ -46,4 +46,4 @@ plugin manager.
 Documentation
 =============
 
-For information on the configuration see ``:help deoplete-biblatex.txt``
+For information on the configuration see ``:help deoplete-biblatex``
