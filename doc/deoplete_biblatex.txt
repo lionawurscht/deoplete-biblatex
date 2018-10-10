@@ -46,6 +46,12 @@ Set a delimiter between citations in python regex syntax:
 <
 Default: ','
 
+Reloaded bibliography after a filechange change.
+>
+  let g:deoplete#sources#biblatex#delimiter = 1
+<
+Default: [0]
+
 You can use the |deoplete#custom#set()| function to change the |filetypes| for
 this source.
 >
