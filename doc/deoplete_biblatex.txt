@@ -19,7 +19,11 @@ for citions of this pattern:
 
   [AGreatCitation....
 
+  [@AGreatCitation....
+
   [AGreatCitation,AnotherCitation....
+
+  [@AGreatCitation,@AnotherCitation....
 
   [author:AGreatCitation...
 
@@ -39,6 +43,12 @@ Set a custom start pattern in python regex syntax:
   let g:deoplete#sources#biblatex#startpattern = '\['
 <
 Default: '\[(?:[\w,]+:)?'
+
+Set a custom key pattern in python regex syntax:
+>
+  let g:deoplete#sources#biblatex#keypattern = '\['
+<
+Default: 'r'@?[\w-]+'
 
 Set a delimiter between citations in python regex syntax:
 >
