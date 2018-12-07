@@ -79,8 +79,13 @@ class Source(Base):
             'deoplete#sources#biblatex#startpattern',
             r'\[(?:[\w,]+:)?',
         )
-        pattern_completed = r'(?:@?[\w-]+{})*'.format(pattern_delimiter)
-        pattern_current = r'@?[\w-]+$'
+        pattern_key = context['vars'].get(
+            'deoplete#sources#biblatex#keypattern',
+            r'@?[\w-]+',
+        )
+
+        pattern_current = r'{}$'.format(pattern_key)
+        pattern_completed = r'(?:{}{})*'.format(pattern_key, pattern_delimiter)
 
         self.__pattern = re.compile(
             pattern_start
