@@ -18,6 +18,7 @@ MY_CODES = {
 def bibtexparser_customizations(record):
     record = bibtexparser.customization.author(record)
     record = bibtexparser.customization.editor(record)
+    record = bibtexparser.customization.add_plaintext_fields(record)
     return record
 
 
@@ -95,9 +96,47 @@ class Source(Base):
 
         self.__reload_bibfile_on_change = reload_bibfile_on_change
 
+        add_info = context['vars'].get(
+            'deoplete#sources#biblatex#addinfo',
+            0,
+        )
+        add_info = bool(add_info)
+
+        self.__add_info = add_info
+
+    def __format_info(self, entry):
+        return '{title}{author}{date}'.format(
+            title=('Title: {}\n'.format(entry['plain_title'])
+                   if 'plain_title' in entry else ''),
+            author=(
+                'Author{plural}: {author}\n'.format(
+                    plural='s' if len(entry['author']) > 1 else '',
+                    author='; '.join(entry['author']),
+                )
+                if 'author' in entry else ''
+            ),
+            date=('Year: {}\n'.format(entry['plain_date'].split('-')[0])
+                  if 'plain_date' in entry else ''),
+        )
+
+    def __entry_to_candidate(self, entry):
+        candidate = {
+            'abbr': entry['ID'],
+            'word': entry['ID'],
+            'kind': entry['ENTRYTYPE'],
+        }
+
+        if self.__add_info:
+            candidate['info'] = self.__format_info(entry)
+
+        return candidate
+
     def gather_candidates(self, context):
         if self.__pattern.search(context['input']):
-            return [{'word': v['ID'], 'kind': v['ENTRYTYPE']}
-                    for (k, v) in self.__bibliography.items()]
+            candidates = [
+                self.__entry_to_candidate(entry)
+                for entry in self.__bibliography.values()
+            ]
+            return candidates
         else:
             return []
