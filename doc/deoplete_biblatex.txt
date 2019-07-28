@@ -69,6 +69,15 @@ this source.
 <
 Default: ['rst']
 
+Additionally you can specify any of the boolean options specified at
+https://bibtexparser.readthedocs.io/en/master/bibtexparser.html#module-bibtexparser.bparser
+in the form of:
+>
+  let g:deoplete#sources#biblatex#<option> = [1/0]
+<
+By default the options `ignore_nonstandard_types` and `common_strings` are set
+to 1 (=true).
+
 ===============================================================================
 LICENSE                                             *deoplete-biblatex-license*
 
